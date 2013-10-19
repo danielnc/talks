@@ -194,6 +194,7 @@
           <section id="config-comparison">
             <h2>Configuração</h2>
             <pre class="left fragment">Puppet quickstart (serverless)
+              <code data-trim>
 $ vim test.pp
 
 
@@ -204,11 +205,13 @@ file { 'testfile-puppet':
   content => "I'm a test file.\n"
 }
 
-$ puppet apply test.pp</pre>
-                    
-                    <pre class="right fragment">Chef quickstart (solo)
+$ puppet apply test.pp
+              </code>
+            </pre>
 
             <pre class="right fragment">Chef quickstart (solo)
+              <code data-trim>
+$ cd /var/chef/cookbooks
 $ knife cookbook create test
 $ vim test/recipes/default.rb
 
