@@ -22,3 +22,20 @@ section h2.devopsdays {
 .devopsdays {
   text-transform: none;
 }
+
+small.tiny {
+    font-size: 0.4em;
+}
+
+#config-comparison pre {
+    width: 45%;
+    margin-top: 5%;
+}
+
+#config-comparison pre.left {
+    float: left;
+}
+
+#config-comparison pre.right {
+    float: right;
+}

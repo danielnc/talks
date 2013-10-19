@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Chef ou Puppet - O Dilema do DevOps Iniciante</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -103,9 +103,68 @@
 
 				<section>
 					<h2>DevOps é</h2>
-					<p class="fragment">É um movimento baseado em experiencias</p>
-					<p class="fragment">Experiencias sobre o que funciona, o que não funciona</p>
+					<p class="fragment">Um movimento baseado em experiências</p>
+					<p class="fragment">Experiencias sobre como desenvolvimento e operações podem trabalhar juntos</p>
 				</section>
+
+                <section>
+                    <h2>DevOps veio para</h2>
+                    <ul>
+                        <li class="fragment">Cobrir o gap entre desenvolvimento e operações</li>
+                        <li class="fragment">Introduzir agilidade no processo de deploy sem perder confiabilidade</li>
+                        <li class="fragment">Utilizar código e suas boas práticas em provisionamento e manutenção de infra</li>
+                    </ul>
+                    <aside class="notes">
+                        Vamos abordar os 3 tópicos separadamente a seguir
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Dev vs Ops</h2>
+                    <p><img src="images/WallOfConfusion.png" alt="Wall of Confusion" style="width:100%" /> <br/>
+                    <small class="tiny">http://blog.eriksen.com.br/sites/default/files/uploads/shared/wall-of-confusion-en.png</small></p>
+                    <aside class="notes medium-text">
+                        * equipes viviam separadas por um muro: o desenvolvimento quer mudança, operações quer estabilidade<br/>
+                        * Dev -&gt; Agile, iterações rápidas, feedback loop curto<br/>
+                        * Ops -&gt; Estabilidade. Longos períodos entre deploys. Mudança é sempre mal vista<br/>
+                        * Problemas significam equipes culpando uma a outra<br/>
+                        * Ops muitas vezes não sabe o que está mudando no sistema<br/>
+                        * Mudança cultural
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Deploys contínuos</h2>
+                    <p><img src="images/oprah.jpg" alt="Everybody gets a deployment" /><br/>
+                    <small class="tiny">http://i.qkme.me/3vpghd.jpg</small></p>
+                    <aside class="notes">
+                        * Como viabilizar?
+                        * Processo de build e deploy em um único passo
+                        * Comunicação entre developers e ops
+                        * Infra automatizada
+                        * Repositório compartilhado entre app e código da infra (todo mundo sabe onde procurar)
+                        * Responsabilidade de deploy compartilhada entre equipes
+                        * Observação de métricas
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Infra as code</h2>
+                    <p><img src="images/automate-all-the-things.png" alt="Automate all the things!" style="height:60%"/><br/>
+                    <small class="tiny">http://www.opscode.com/blog/wp-content/uploads/2012/02/automate-all-the-things.png</small></p>
+                    <aside class="notes">
+                        * Boas práticas de código:
+                        1. Escalável
+                        2. Facil manutenção
+                        3. Repetivel(Para criar um ambiente só é necessario codigos, backup de dados e hardware/cloud)
+                        4. Controle de versão
+                        5. Peer review
+                        6. Testes
+                        * Vamos abordar as duas principais ferramentas a seguir, mostrar o que fazem, como fazem e suas principais diferenças
+                        * Quem já tinha ouvido falar de Puppet / Quem usa Puppet?
+                        * Quem já tinha ouvido falar de Chef / Quem usa Chef?
+                    </aside>
+                </section>
 
 				<section>
 					<h1>Puppet vs Chef</h1>
@@ -132,8 +191,41 @@
 						Força a ordem de execução(mais popular com devs)
 						Ruby DSL (focado em automação de cloud)
 					</aside>
-				</section>
+                </section>
 
+                <section id="config-comparison">
+                    <h2>Configuração</h2>
+                    <pre class="left fragment">Puppet quickstart (serverless)
+
+$ vim test.pp
+
+file { 'testfile-puppet':
+  path    => '/tmp/testfile-puppet',
+  ensure  => present,
+  mode    => '0640',
+  content => "I'm a test file.\n"
+}
+
+$ puppet apply test.pp</pre>
+                    
+                    <pre class="right fragment">Chef quickstart (solo)
+
+$ knife cookbook create test
+
+$ vim /var/chef/cookbooks/test/recipes/default.rb
+
+  file "/tmp/testfile-chef" do
+    mode    "0640"
+    content "I'm a test file.\n"
+    action  :create
+  end
+
+$ chef-solo -o test -N test</pre>
+                    <aside class="notes">
+						Dá pra escrever ruby no Puppet também
+					</aside>
+                </section>
+                
 				<section>
 					<h2>Documentação</h2>
 					<p><a href="http://docs.puppetlabs.com/" target="_blank">http://docs.puppetlabs.com/</a></p>
