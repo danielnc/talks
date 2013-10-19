@@ -194,12 +194,13 @@
           <small class="tiny">http://blog.eriksen.com.br/sites/default/files/uploads/shared/wall-of-confusion-en.png</small></p>
           <aside class="notes" data-markdown>
             <script type="text/template">
-              * equipes viviam separadas por um muro: o desenvolvimento quer mudança, operações quer estabilidade
-              * Dev -> Agile, iterações rápidas, feedback loop curto
-              * Ops -> Estabilidade. Longos períodos entre deploys. Mudança é sempre mal vista
-              * Problemas significam equipes culpando uma a outra
-              * Ops muitas vezes não sabe o que está mudando no sistema
-              * Mudança cultural
+							* Cobrir o gap entre desenvolvimento e operações
+							* equipes viviam separadas por um muro: o desenvolvimento quer mudança, operações quer estabilidade
+							* Dev -> Agile, iterações rápidas, feedback loop curto
+							* Ops -> Estabilidade. Longos períodos entre deploys. Mudança é sempre mal vista
+							* Problemas significam equipes culpando uma a outra
+							* Ops muitas vezes não sabe o que está mudando no sistema
+							* Mudança cultural
 						</script>
 					</aside>
         </section>
@@ -210,13 +211,14 @@
           <small class="tiny">http://i.qkme.me/3vpghd.jpg</small></p>
           <aside class="notes" data-markdown>
             <script type="text/template">
-              * Como viabilizar?
-              * Processo de build e deploy em um único passo
-              * Comunicação entre developers e ops
-              * Infra automatizada
-              * Repositório compartilhado entre app e código da infra (todo mundo sabe onde procurar)
-              * Responsabilidade de deploy compartilhada entre equipes
-              * Observação de métricas
+							* Introduzir agilidade no processo de deploy sem perder confiabilidade
+							* Como viabilizar?
+							* Processo de build e deploy em um único passo
+							* Comunicação entre developers e ops
+							* Infra automatizada
+							* Repositório compartilhado entre app e código da infra (todo mundo sabe onde procurar)
+							* Responsabilidade de deploy compartilhada entre equipes
+							* Observação de métricas
 						</script>
           </aside>
         </section>
@@ -227,16 +229,17 @@
           <p><small class="tiny">http://www.opscode.com/blog/wp-content/uploads/2012/02/automate-all-the-things.png</small></p>
           <aside class="notes" data-markdown>
             <script type="text/template">
-              * Boas práticas de código:
-              1. Escalável
-              2. Facil manutenção
-              3. Repetivel(Para criar um ambiente só é necessario codigos, backup de dados e hardware/cloud)
-              4. Controle de versão
-              5. Peer review
-              6. Testes
-              * Vamos abordar as duas principais ferramentas a seguir, mostrar o que fazem, como fazem e suas principais diferenças
-              * Quem já tinha ouvido falar de Puppet / Quem usa Puppet?
-              * Quem já tinha ouvido falar de Chef / Quem usa Chef?
+							* Utilizar código e suas boas práticas em provisionamento e manutenção de infra
+							* Boas práticas de código:
+								1. Escalável
+								2. Facil manutenção
+								3. Repetivel(Para criar um ambiente só é necessario codigos, backup de dados e hardware/cloud)
+								4. Controle de versão
+								5. Peer review
+								6. Testes
+							* Vamos abordar as duas principais ferramentas a seguir, mostrar o que fazem, como fazem e suas principais diferenças
+							* Quem já tinha ouvido falar de Puppet / Quem usa Puppet?
+							* Quem já tinha ouvido falar de Chef / Quem usa Chef?
 						</script>
           </aside>
         </section>
@@ -349,7 +352,9 @@ $ chef-solo -o test -N test
 				</section>
 
 				<section>
-					<h2>Conclusão</h2>
+					<h1>Conclusão</h1>
+					<h2 class="fragment">E então... Chef ou Puppet?</h2>
+					<h2 class="fragment">Sim!</h2>
 				</section>
 
 				<section>
