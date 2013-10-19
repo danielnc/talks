@@ -331,6 +331,7 @@ var Reveal = (function(){
 		dom.theme = document.querySelector( '#theme' );
 		dom.wrapper = document.querySelector( '.reveal' );
 		dom.slides = document.querySelector( '.reveal .slides' );
+		dom.footer = document.querySelector( '.reveal .footer' );
 
 		// Prevent transitions while we're loading
 		dom.slides.classList.add( 'no-transition' );
@@ -1021,6 +1022,9 @@ var Reveal = (function(){
 			// with nested transforms
 			if( typeof dom.slides.style.zoom !== 'undefined' && !navigator.userAgent.match( /(iphone|ipod|ipad|android)/gi ) ) {
 				dom.slides.style.zoom = scale;
+				if (typeof dom.footer !== 'undefined') {
+					dom.footer.style.zoom = scale;
+				}
 			}
 			// Apply scale transform as a fallback
 			else {
